@@ -3,21 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint *.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hgwood/hash-code-2017-training.git"
   },
-  "keywords": ["hash code", "google", "contest", "2017"],
+  "keywords": [
+    "hash code",
+    "google",
+    "contest",
+    "2017"
+  ],
   "contributors": [
     "Julien Landuré",
     "Nicolas Lepage",
     "Pierre Reliquet",
     "Hugo Wood"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hgwood/hash-code-2017-training/issues"
   },
-  "homepage": "https://github.com/hgwood/hash-code-2017-training#readme"
+  "homepage": "https://github.com/hgwood/hash-code-2017-training#readme",
+  "devDependencies": {
+    "eslint": "^3.14.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1"
+  }
 }
