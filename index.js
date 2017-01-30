@@ -9,6 +9,8 @@ const solve = require('./solve')
 
 const files = _.slice(process.argv, 2)
 
+if (_.isEmpty(files)) console.warn('No input files given.')
+
 _.each(files, function (file) {
   const problem = read(file)
   const solution = solve(problem)
