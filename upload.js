@@ -3,7 +3,7 @@
  *
  * node ./upload.js sources sourceZip dataSet1 solutionFileForDataSet1 dataSet2 solutionFileForDataSet2 ...
  *
- * Only sources is required. Valid data set names can be found in the dataSet const.
+ * sources is required. At least one data set is required. Valid data set names can be found in the dataSet const.
  */
 
 const _ = require('lodash')
