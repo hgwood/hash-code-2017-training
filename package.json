@@ -1,0 +1,23 @@
+{
+  "name": "hash-code-2017-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgwood/hash-code-2017-training.git"
+  },
+  "keywords": ["hash code", "google", "contest", "2017"],
+  "contributors": [
+    "Julien Landuré",
+    "Nicolas Lepage",
+    "Pierre Reliquet",
+    "Hugo Wood"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hgwood/hash-code-2017-training/issues"
+  },
+  "homepage": "https://github.com/hgwood/hash-code-2017-training#readme"
+}
