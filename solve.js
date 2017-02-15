@@ -4,9 +4,8 @@ const _ = require('lodash')
 module.exports = function solve (problem) {
   debug('start')
   return _(problem.pizza).map((line, y) => {
-    debug(line, y)
-    //debug("slice=>",sliceOk(line, problem.minIngredient))
     if(problem.maxSliceSize > line.length && sliceOk(line, problem.minIngredients)) {
+      //FIXME only works with maxSlices > line.length
       return cut(line, 0,  y)
     }
   }).compact().value()
@@ -19,9 +18,6 @@ function cut(slice, x, y) {
 
 function sliceOk(slice, minIngredients) {
   //TODO one line only
-  debug("mining", minIngredients)
-  debug("slice", _.filter(slice, (l) => l === "M"))
-  debug(_.filter(slice, (l) => l === "M").length)
   return _.filter(slice, (l) => l === "M").length >= minIngredients
         && _.filter(slice, (l) => l === "T").length >= minIngredients
 }
