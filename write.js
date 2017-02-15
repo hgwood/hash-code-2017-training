@@ -11,10 +11,21 @@ function writeLines (path, lines) {
   debug(`wrote ${lines.length} lines to ${path}`)
 }
 
+// Format attendu :
+// [
+//   {
+//     r1: 0,
+//     c1: 0,
+//     r2: 2,
+//     c2: 1,
+//   },
+//   ...
+// ]
 function unparse (solution) {
-  // TODO: insert write logic here
-  // must return an array of lines to write to the output file
-  return []
+  return [
+    `${solution.length}`,
+    ..._.map(solution, ({ r1, c1, r2, c2 }) => `${r1} ${c1} ${r2} ${c2}`)
+  ]
 }
 
 module.exports.unparse = unparse
