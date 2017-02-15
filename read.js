@@ -9,7 +9,7 @@ module.exports = function read (filePath) {
 }
 
 module.exports.parse = function (textFromInputFile) {
-  const [header, ...pizza] = textFromInputFile.split('\n').filter(line => line)
+  const [header, ...pizza] = textFromInputFile.split('\n').filter(line => line.trim())
   const [nrows, ncolumns, minIngredients, maxSliceSize] = header.trim().split(' ').map(i => Number(i))
   const result = {
     nrows,
