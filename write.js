@@ -22,6 +22,7 @@ function writeLines (path, lines) {
 //   ...
 // ]
 function unparse (solution) {
+  debug("solution", solution)
   return [
     `${solution.length}`,
     ..._.map(solution, ({ r1, c1, r2, c2 }) => `${r1} ${c1} ${r2} ${c2}`)

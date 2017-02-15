@@ -4,9 +4,21 @@ const _ = require('lodash')
 module.exports = function solve (problem) {
   debug('start')
   return _(problem.pizza).map((line, y) => {
+    let index = 0
+    let slice
     if(problem.maxSliceSize > line.length && sliceOk(line, problem.minIngredients)) {
       //FIXME only works with maxSlices > line.length
       return cut(line, 0,  y)
+    }
+    while(index < line.length - 1) {
+      slice = _.slice(line, index, _.min(index + problem.maxSliceSize, line.length))
+      debug("🍕 slice of pizza", slice)
+      if(sliceOk(slice, problem.minIngredients)) {
+        debug("👍 isOk!!!!! ")
+        return cut(slice, index, y)
+      } else {
+        index++
+      }
     }
   }).compact().value()
   debug('end')
