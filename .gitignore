@@ -38,3 +38,7 @@ jspm_packages
 
 # Builds
 .builds/
+
+# Problem IOs
+*.in
+*.out.txt
