@@ -6,6 +6,7 @@
  * sources is required. At least one data set is required. Valid data set names can be found in the dataSet const.
  */
 
+const path = require('path')
 const _ = require('lodash')
 const debug = require('debug')('upload')
 const fs = require('fs')
@@ -85,7 +86,11 @@ function shorten (str) {
 if (module === require.main) {
   const co = require('co')
   const explode = err => process.nextTick(() => { throw err })
-  const solution = _(process.argv).drop(2).chunk(2).fromPairs().value()
+  let solution = _(process.argv).drop(2).chunk(2).fromPairs().value()
+  if (_.isEmpty(solution)) {
+    solution = _.mapValues(dataSets, (id, name) => `${name}.in.out.txt`)
+    solution.sources = path.join(__dirname, '.builds', _.last(fs.readdirSync(path.join(__dirname, '.builds')).sort()))
+  }
   debug('solution', solution)
   co(submitSolution(solution)).catch(explode)
 }
