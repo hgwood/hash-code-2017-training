@@ -12,9 +12,7 @@ module.exports = function solve (problem) {
     }
     while(index < line.length - 1) {
       slice = _.slice(line, index, Math.min(index + problem.maxSliceSize, line.length))
-      debug("🍕 slice of pizza", slice)
       if(sliceOk(slice, problem.minIngredients)) {
-        debug("👍 isOk!!!!! ", cut(slice, index, y))
         return cut(slice, index, y)
       } else {
         index++
