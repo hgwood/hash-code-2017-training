@@ -8,7 +8,8 @@
     "lint": "eslint *.js",
     "test": "mocha *.test.js",
     "upload": "node -r dotenv/config ./upload",
-    "zip": "node ./zip"
+    "zip": "node ./zip",
+    "scaffold": "node scaffold"
   },
   "repository": {
     "type": "git",
