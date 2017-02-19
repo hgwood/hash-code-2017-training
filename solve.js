@@ -5,7 +5,6 @@ const transpose = require('./transpose')
 module.exports = function solve (problem) {
   debug('start')
   return findSlicesByCol(problem)
-  debug('end')
 }
 
 function findSlicesByCol (problem) {
