@@ -1,8 +1,8 @@
-"use strict"
+'use strict'
 
-process.env.DEBUG = "*"
+process.env.DEBUG = '*'
 
-const _ = require("lodash")
+const _ = require('lodash')
 const read = require('./read')
 const write = require('./write')
 const solve = require('./solve')
