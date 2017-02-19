@@ -4,7 +4,8 @@ const {transpose} = require('./grid-utils')
 
 module.exports = function solve (problem) {
   debug('start')
-  return findSlicesByCol(problem)
+  // return findSlicesByCol(problem)
+  return findSlicesLineByLine(problem)
 }
 
 function findSlicesByCol (problem) {
@@ -31,13 +32,16 @@ function findSlicesLineByLine (problem) {
       // FIXME only works with maxSlices > line.length
       return cutLineByLine(line, 0, y)
     }
+    let slices = []
     while (index < line.length - 1) {
       slice = _.slice(line, index, Math.min(index + problem.maxSliceSize, line.length))
       if (sliceOk(slice, problem.minIngredients)) {
-        return cutLineByLine(slice, index, y)
+        slices.push(cutLineByLine(slice, index, y))
+        index += slice.length
       } else {
         index++
       }
     }
-  }).compact().value()
+    return slices
+  }).flatMap().compact().value()
 }
