@@ -1,8 +1,9 @@
 const fs = require('fs')
+const _ = require('lodash')
 
 function scaffold (functionName) {
-  fs.writeFileSync(`${functionName}.js`, scaffoldProductionCode(functionName))
-  fs.writeFileSync(`${functionName}.test.js`, scaffoldTestCode(functionName))
+  fs.writeFileSync(`${_.kebabCase(functionName)}.js`, scaffoldProductionCode(functionName))
+  fs.writeFileSync(`${_.kebabCase(functionName)}.test.js`, scaffoldTestCode(functionName))
 }
 
 function scaffoldProductionCode (functionName) {
