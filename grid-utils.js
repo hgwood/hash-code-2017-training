@@ -10,9 +10,10 @@ module.exports = {
    */
   each: lift(_.each, _.each, (value, x, y, grid, row, f) => f(value, x, y, grid, row)),
   /**
-   * Well, you know, map. Function takes same params as each.
+   * Well, you know, map. Function takes same params as `each`.
    */
-  map: lift(_.map, _.map, (value, x, y, grid, row, f) => f(value, x, y, grid, row))
+  map: lift(_.map, _.map, (value, x, y, grid, row, f) => f(value, x, y, grid, row)),
+  transpose
 }
 
 function lift (fgrid, frow, fvalue) {
@@ -23,4 +24,8 @@ function lift (fgrid, frow, fvalue) {
       })
     })
   }
+}
+
+function transpose (matrix) {
+  return _.times(matrix[0].length, i => matrix.map(row => row[i]))
 }
