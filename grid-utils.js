@@ -10,9 +10,12 @@ module.exports = {
    */
   each: lift(_.each, _.each, (value, x, y, grid, row, f) => f(value, x, y, grid, row)),
   /**
-   * Well, you know, map. Function takes same params as `each`.
+   * Maps values of the cells. Function takes same params as `each`.
    */
   map: lift(_.map, _.map, (value, x, y, grid, row, f) => f(value, x, y, grid, row)),
+  /**
+   * Matrix transposition from maths. Inverts columns and rows. https://en.wikipedia.org/wiki/Transpose
+   */
   transpose
 }
 
