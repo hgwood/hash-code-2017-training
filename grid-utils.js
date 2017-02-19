@@ -26,6 +26,6 @@ function lift (fgrid, frow, fvalue) {
   }
 }
 
-function transpose (matrix) {
-  return _.times(matrix[0].length, i => matrix.map(row => row[i]))
+function transpose (grid) {
+  return _.times(grid[0].length, x => grid.map(row => row[x]))
 }
