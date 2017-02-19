@@ -1,6 +1,6 @@
 const debug = require('debug')('solve')
 const _ = require('lodash')
-const transpose = require('./transpose')
+const {transpose} = require('./grid-utils')
 
 module.exports = function solve (problem) {
   debug('start')
